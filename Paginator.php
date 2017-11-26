@@ -37,6 +37,7 @@ class Paginator
 	private $_page_var_name;
 	private $_page;
 	private $_links_range;
+	private $_url;
 
 	/**
 	 * Paginator constructor.
@@ -81,6 +82,20 @@ class Paginator
 	}
 
 	/**
+	 * @param 		string		$url	URL to append page to
+	 * 
+	 * @return 		null
+	 */
+	public function set_url($url) {
+		if(is_string($url)) {
+			$this->_url = $url;
+		} else {
+			throw new \Exception("Invalid url format passed: ".$url);
+		}
+		return;
+	}
+
+	/**
 	 * @param       string      $ul_class       CSS class for pagination's ul tag
 	 * @param       string      $li_class       CSS class for pagination's ul>li tag
 	 * @param       string      $a_class        CSS class for pagination's ul>li>a tag
@@ -90,7 +105,8 @@ class Paginator
 	 * @return string
 	 */
 	public function paginate($ul_class="pagination pagination-sm", $li_class="page-item", $a_class="page-link", $active="active", $disabled="disabled") {
-		$link = preg_replace('#('.$this->_page_var_name.'=[0-9]+)#', "", $_SERVER['REQUEST_URI']);
+		$link = empty($this->_url)? preg_replace('#('.$this->_page_var_name.'=[0-9]+)#', "", $_SERVER['REQUEST_URI']) : 
+									 preg_replace('#('.$this->_page_var_name.'=[0-9]+)#', "", $this->_url);
 		$i = strpos($link, '?');
 		$j = preg_match('#&$#', $link);
 		$k = preg_match('#\?$#', $link);
