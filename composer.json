@@ -1,0 +1,19 @@
+{
+    "name": "paginator/paginator",
+    "type": "library",
+    "description": "Pagination class for PHP",
+    "keywords": ["paginator","pagination"],
+    "homepage": "https://github.com/tommylykerin/php-paginator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomiwa Ibiwoye",
+            "email": "tommylykerin@gmail.com",
+            "homepage": "http://www.terajournal.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    }
+}
