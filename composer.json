@@ -1,5 +1,5 @@
 {
-    "name": "paginator/paginator",
+    "name": "tommylykerin/paginator",
     "type": "library",
     "description": "Pagination class for PHP",
     "keywords": ["paginator","pagination"],
