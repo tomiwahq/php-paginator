@@ -3,6 +3,6 @@
     "type": "library",
     "description": "Pagination class for PHP",
     "autoload": {
-        "files": ["spaces.php"]
+        "files": ["Paginator.php"]
     }
 }
