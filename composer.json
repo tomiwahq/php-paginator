@@ -1,5 +1,8 @@
 {
     "name": "tommylykerin/php-paginator",
     "type": "library",
-    "description": "Pagination class for PHP"  
+    "description": "Pagination class for PHP",
+    "autoload": {
+        "files": ["spaces.php"]
+    }
 }
